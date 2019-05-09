@@ -5,7 +5,7 @@ class ToolController {
     const filter = {}
 
     if (req.query.tag) {
-      filter.tag = new RegExp(req.query.tag, 'i')
+      filter.tags = { $in: [new RegExp(req.query.tag, 'i')] }
     }
 
     const tools = await Tool.paginate(filter, {
