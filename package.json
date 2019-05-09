@@ -17,7 +17,6 @@
     "youch": "^2.0.10"
   },
   "devDependencies": {
-    "aglio": "^2.3.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
