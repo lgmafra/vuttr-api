@@ -1,0 +1,137 @@
+FORMAT: 1A
+
+# VUTTR (Very Useful Tools to Remember) API
+
+This API was created for the user can use as a repository of tools
+
+# Group Tools
+
+Resources related to tools in the API
+
+## Tools Collection [/tools]
+
+### List all tools [GET]
+
+List all tools registered in database
+
++ Response 200 (application/json)
+
+        {
+          "docs": [
+            {
+              "tags": [
+                "web",
+                "framework",
+                "node",
+                "http2",
+                "https",
+                "localhost"
+              ],
+              "_id": "5cd37a26f458600ab1bfe63a",
+              "title": "fastify",
+              "link": "https://www.fastify.io/",
+              "description": "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
+              "__v": 0
+            },
+            {
+              "tags": [
+                "api",
+                "json",
+                "schema",
+                "node",
+                "github",
+                "rest"
+              ],
+              "_id": "5cd37a43f458600ab1bfe63b",
+              "title": "json-server",
+              "link": "https://github.com/typicode/json-server",
+              "description": "Fake REST API based on a json schema. Useful for mocking and creating APIs for front-end devs to consume in coding challenges.",
+              "__v": 0
+            },
+            {
+              "tags": [
+                "organization",
+                "planning",
+                "collaboration",
+                "writing",
+                "calendar"
+              ],
+              "_id": "5cd380f64add990ddd4c4e17",
+              "title": "Notion",
+              "link": "https://notion.so",
+              "description": "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+              "__v": 0
+            }
+          ],
+          "total": 3,
+          "limit": 20,
+          "page": 1,
+          "pages": 1
+        }
+
+### List tools filtered by tag [GET /tools?tag=organization]
+
+List all tools registered in database filtered by tag
+
+Using the tag `organization` the result will be
+
++ Response 200 (application/json)
+
+        {
+          "docs": [
+            {
+              "tags": [
+                "organization",
+                "planning",
+                "collaboration",
+                "writing",
+                "calendar"
+              ],
+              "_id": "5cd380f64add990ddd4c4e17",
+              "title": "Notion",
+              "link": "https://notion.so",
+              "description": "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+              "__v": 0
+            }
+          ],
+          "total": 1,
+          "limit": 20,
+          "page": 1,
+          "pages": 1
+        }
+
+### Create tools [POST]
+
+Create a new tool and returns the object in json format
+
++ title (string) - The title of tool
++ link (string) - The link of tool home page
++ description (string) - The description of tool
++ tags (array[string]) - The tags linked by tool
+
++ Response 200 (application/json)
+
+        {
+          "tags": [
+            "organization",
+            "planning",
+            "collaboration",
+            "writing",
+            "calendar"
+          ],
+          "_id": "5cd380f64add990ddd4c4e17",
+          "title": "Notion",
+          "link": "https://notion.so",
+          "description": "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+          "__v": 0
+        }
+
+### Delete tool [DELETE]
+
+Delete some tool using `id` as parameter
+
++ id (number) - ID of the tool using to filter and delete the object
+
++ Response 200 (application/json)
+
+        {}

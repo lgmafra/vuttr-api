@@ -1,4 +1,5 @@
 const Tool = require('../models/Tool')
+const path = require('path')
 
 class ToolController {
   async index (req, res) {
@@ -26,6 +27,12 @@ class ToolController {
     await Tool.findByIdAndDelete(req.params.id)
 
     return res.json({})
+  }
+
+  documentation (req, res) {
+    res.sendFile(
+      path.resolve(__dirname, '..', '..', '..', 'public', 'index.html')
+    )
   }
 }
 

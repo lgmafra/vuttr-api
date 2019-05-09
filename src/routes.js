@@ -8,6 +8,8 @@ const ToolController = require('./app/controllers/ToolController')
 
 const ToolValidator = require('./app/validators/Tool')
 
+routes.get('/', ToolController.documentation)
+
 routes.get('/tools', handle(ToolController.index))
 routes.post('/tools', validate(ToolValidator), handle(ToolController.store))
 routes.delete('/tools/:id', handle(ToolController.delete))
