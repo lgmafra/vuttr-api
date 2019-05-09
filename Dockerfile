@@ -6,9 +6,9 @@ COPY package.json /home/vuttr-api/app/
 
 RUN npm install -g yarn
 
-COPY . /home/vuttr-api/app
-
 RUN yarn
+
+COPY . /home/vuttr-api/app
 
 EXPOSE 3000
 
