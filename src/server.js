@@ -34,7 +34,7 @@ class App {
   exception () {
     this.express.use(async (error, req, res, next) => {
       if (error instanceof validate.ValidationError) {
-        return res.status(error.status).json(error.message)
+        return res.status(error.status).json(error)
       }
 
       if (process.env.NODE_ENV !== 'production') {
