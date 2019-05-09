@@ -9,7 +9,10 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-async-handler": "^1.1.4",
-    "mongoose": "^5.5.6"
+    "express-validation": "^1.0.2",
+    "joi": "^14.3.1",
+    "mongoose": "^5.5.6",
+    "youch": "^2.0.10"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
