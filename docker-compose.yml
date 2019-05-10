@@ -7,5 +7,6 @@ services:
     build: .
     volumes:
       - .:/home/vuttr-api/app
+      - /home/vuttr-api/app/node_modules
     ports:
       - "3000:3000"
